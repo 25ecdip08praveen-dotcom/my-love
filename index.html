@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+  <title>Special Birthday Journey</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sofia&family=Lora:wght@700&family=Quicksand:wght@500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SPLINE SECTION -->
+  <section id="spline-section">
+    <iframe
+      src="https://my.spline.design/keyboardlove-WhmS9OEBnsQnFlEVh3cEGQPV/"
+      allowfullscreen
+    ></iframe>
+
+    <div class="subtitle" onclick="showDashboard()">click here</div>
+  </section>
+
+  <!-- DASHBOARD SECTION -->
+  <section id="dashboard-section">
+    <div class="dashboard">
+      <div class="dashboard-bg"></div>
+
+      <div class="card" onclick="openMemories()">
+        <div class="card-icon">📸</div>
+        <span class="card-title">Our Memories</span>
+      </div>
+
+      <div class="card" onclick="openWishes()">
+        <div class="card-icon">🎂</div>
+        <span class="card-title">Birthday Wishes</span>
+      </div>
+
+      <div class="card" onclick="openletter()"> 
+        <div class="card-icon">✉️</div>
+        <span class="card-title">A Small Letter</span>
+      </div>
+
+      <div class="card" onclick="openGift()">
+        <div class="card-icon">🎁</div>
+        <span class="card-title">Open This</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORIES MODAL -->
+  <div id="memories-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeMemories()">&times;</span>
+
+      <!-- GRID VIEW -->
+      <div id="memory-grid-view">
+        <h2 class="modal-title">Our Special Moments</h2>
+
+        <div class="memory-grid">
+
+          <div
+            class="memory-item"
+            onclick="showPhotoDetail(
+              'img1.jpg',
+              'CUBBON PARK 💙',
+              'It was never planned.\nJust a sudden plan. 💙\n\nOn 30/03/2025, walking through Cubbon Park with her, time slowly forgot to move.\nBetween trees, laughter, and silent smiles, I found a happiness I didn’t know I was missing. 💙\n\nThat day didn’t give me memories — it gave me peace.'
+            )"
+          >
+            <img src="img1.jpg" alt="Cubbon Park">
+          </div>
+
+          <div
+            class="memory-item"
+            onclick="showPhotoDetail(
+              'img2.jpg',
+              'OUR FIRST TRIP 💙',
+              'It began as a journey of faith to Mantralayam,\nbut the place became special because I was there with her.\n\nWalking beside her near the temple, amidst prayers and silence,\npeace felt deeper, calmer — like my heart finally slowed down. 💙\n\nThe return journey was different.\nThe unreserved train coach was filled with rush, noise, and tired faces.\nShe was stressed, overwhelmed by the crowd.\n\nIn that chaos, she held me close — just to feel safe for a moment. 💙\nLater, with her own hands, she fed me,\nand suddenly the crowded train felt quieter than a prayer hall.\n\nSome journeys give blessings,\nsome give memories —\nthis one gave me her care, her warmth, and moments I’ll never forget.'
+            )"
+          >
+            <img src="img2.jpg" alt="Mantralayam">
+          </div>
+
+          <div
+            class="memory-item"
+            onclick="showPhotoDetail(
+              'img3.jpg',
+              'CHIKKANAGAMANGALA FAIR 💙',
+              'On 23rd March 2025, we went to the Chikkanagamangala fair in Bengaluru.\nLights, noise, and colors filled the evening with life.\n\nI held her hand as we walked through the crowd,\nand somehow, the chaos felt calm and familiar. 💙\n\nHer fingers tightened around mine, as if saying “don’t let go.”\nIn that fair full of people, I felt like it was just us.\n\nBetween small rides, street food, and shared smiles,\nholding her hand made everything feel right.'
+            )"
+          >
+            <img src="img3.jpg" alt="Fair">
+          </div>
+
+          <div
+            class="memory-item"
+            onclick="showPhotoDetail(
+              'img4.jpg',
+              'MY FIRST 12 A.M. 💙',
+              'In the last 19 years of my life, I had never celebrated my birthday at 12 a.m.\nBut on 15/02/2025, she changed that forever.\n\nThat night, she celebrated my birthday with me,\nand for the first time in my life, I received a birthday gift on my birthday. 💙\nSomething I had never experienced in the last 19 years.\n\nIt wasn’t just a celebration — it was a feeling I had waited for silently.\nA moment where I felt seen, cared for, and truly special.\n\nI know this may be the last birthday I celebrate like this.\nFrom 2026 onwards, I may not have someone to celebrate the same way.\n\nAnd I’ll keep that valuable birthday gift with me,\ntreasuring it till my last breath.'
+            )"
+          >
+            <img src="img4.jpg" alt="Birthday">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DETAIL VIEW -->
+      <div id="memory-detail-view" style="display: none;">
+        <button class="back-btn" onclick="backToGrid()">← Back to Gallery</button>
+
+        <div class="detail-container">
+          <div class="detail-left">
+            <img id="focused-img" src="" alt="Focused">
+          </div>
+
+          <div class="detail-right">
+            <h3 id="photo-title">Title</h3>
+            <p id="photo-desc">Description...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+ <div id="wishes-modal" class="modal">
+  <div class="modal-content" style="height: 85vh; padding: 0; overflow: hidden; background: #000; border-radius: 40px; position: relative;">
+    <audio id="birthday-song" src="birthday.mp3" loop></audio>
+    
+    <span class="close-btn" onclick="closeWishes()" style="color: white; z-index: 1001; position: absolute; top: 20px; right: 25px; cursor: pointer;">&times;</span>
+
+    <iframe id="wishes-iframe" src="https://my.spline.design/newyearcover2023-unG1e1hZQz1F1LRbzKWO22TZ/" frameborder="0" width="100%" height="100%"></iframe>
+
+    <div id="typewriter-text" style="position: absolute; left: 40px; top: 50%; transform: translateY(-50%); color: #fff; font-family: 'Quicksand', sans-serif; font-size: 20px; line-height: 1.6; max-width: 400px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); z-index: 1000; pointer-events: none;"></div>
+    <div id="replay-container" style="display: none; position: absolute; inset: 0; z-index: 1000; background: transparent;">
+    <div id="typewriter-text"></div>
+    </div>
+    <button onclick="replayWishes()" style="position: absolute; top: 20px; right: 70px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.4); padding: 8px 15px; border-radius: 15px; font-family: 'Quicksand', sans-serif; cursor: pointer; font-size: 14px; z-index: 1001;">
+      ↺ Show Again
+    </button>
+  </div>
+</div>
+<div id="letter-modal" class="modal">
+  <div class="modal-content" style="background: #111; color: white; position: relative; padding-top: 80px;">
+    <span class="close-btn" onclick="closeLetter()" style="color: white; position: absolute; top: 15px; right: 25px;">&times;</span>
+    
+    <div class="audio-player-top">
+      <audio id="letter-audio" src="letter_voice.mp3"></audio>
+      <button id="play-pause-btn" onclick="toggleLetterAudio()">▶</button>
+      <div class="progress-container-mini">
+        <span id="current-time-mini">00:00</span>
+        <div class="progress-bar-mini"><div id="progress-fill-mini"></div></div>
+      </div>
+    </div>
+
+    <div id="letter-body" style="font-family: 'Quicksand', sans-serif; font-size: 16px; line-height: 1.8; padding: 20px; white-space: pre-line;">
+      Dear Ramya,
+
+```
+  I wanted to leave this here for you. Some things are better written than said. 💙
+  
+  I don’t know where to begin, because whenever I think about you, my heart speaks louder than my words. Still, I want to try—because you deserve to know how deeply you mean to me. 🥺
+```
+
+From the moment you came into my life, something changed inside me. You didn’t just become a person I cared about; you became a feeling, a comfort, a quiet strength I never knew I needed. 💙 In a world that keeps rushing forward, you became the moment where everything slowed down and felt real.
+Every smile of yours feels like home. 🥺 Every word you speak stays with me longer than it should, replaying in my mind like my favorite song. 💙 You don’t even realize how powerful your presence is—how simply being you can make someone’s day brighter, someone’s heart lighter. For me, that someone is always me.
+What I admire most about you is not just your beauty, but your heart. 💙 Your kindness, your patience, your strength—even when things aren’t easy, you stand firm. You inspire me to be better, to grow, to believe that love doesn’t have to be loud to be real. Sometimes, it’s silent, steady, and deeply meaningful—just like you. 🥺
+There are memories with you that I will carry forever. 💙 Moments that may seem small to the world, but to me, they are priceless. They remind me that love isn’t about perfection; it’s about connection, understanding, and choosing someone every day—even on the hard days. 🥺
+I don’t know what the future holds, but I know this much: having you in my life has already made my journey more beautiful. 💙 Whether near or far, in laughter or silence, a part of my heart will always wish for your happiness, your peace, and your dreams to come true.
+Ramya, thank you—for being you, for the memories, for the lessons, and for the love you’ve shown in ways you may never fully realize. 💙 You will always have a special place in my heart, one that no time or distance can erase. 🥺
+
+```
+  Always wishing you the best 💙
+
+  — Praveen
+```
+
+    </div>
+  </div>
+</div>
+
+<div id="gift-modal" class="modal">
+  <div class="modal-content" style="background: #fff; text-align: center; padding: 30px;">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2 class="modal-title" style="color: #006064; margin-bottom: 20px;">Something Special for You💙</h2>
+    
+    <div class="gift-image-container">
+      <div class="gift-card">
+        <img src="gift1.jpg" alt="Gift 1">
+        <p>A little something for you...
+          i hope ninuu edhunnaa finger alli aakondu edhiya andhuu konduu edhini💙
+        </p>
+      </div>
+      <div class="gift-card">
+        <img src="gift2.jpg" alt="Gift 2">
+        <p>Because you deserve the best.
+          candel na hacchuu in life saha edhe reethi glow aagbekuu antha aase padthini💙 
+         </p>
+      </div>
+    </div>
+    
+    <p style="font-family: 'Quicksand', sans-serif; margin-top: 20px; color: #666;">
+      I hope edhu two gift uh esta aythuu andkothini 
+      stay happy and stay blessed ✨💙
+    </p>
+  </div>
+</div>
+  <script src="file/script.js"></script>
+  <script>
+    function showDashboard() {
+      document.getElementById("spline-section").classList.add("hide");
+      document.getElementById("dashboard-section").classList.add("show");
+    }
+
+    function openMemories() {
+      const modal = document.getElementById("memories-modal");
+      modal.style.display = "flex";
+      setTimeout(() => modal.classList.add("active"), 10);
+      backToGrid();
+    }
+
+    function closeMemories() {
+      const modal = document.getElementById("memories-modal");
+      modal.classList.remove("active");
+      setTimeout(() => (modal.style.display = "none"), 400);
+    }
+
+    function showPhotoDetail(imgSrc, title, desc) {
+      document.getElementById("memory-grid-view").style.display = "none";
+      document.getElementById("memory-detail-view").style.display = "block";
+      document.getElementById("focused-img").src = imgSrc;
+      document.getElementById("photo-title").innerText = title;
+      document.getElementById("photo-desc").innerText = desc;
+    }
+
+    function backToGrid() {
+      document.getElementById("memory-grid-view").style.display = "block";
+      document.getElementById("memory-detail-view").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
